@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import * as d3 from 'd3';
 import data from "./data.csv";
-import Table from "../table/Table";
 
 const Dashboard = () => {
     const [content, setContent] = useState([]);
@@ -19,7 +18,31 @@ const Dashboard = () => {
         <div>
             <header>List of Orders</header>
             <main>
-                <Table data ={table}/>
+                <table>
+                    <thead>
+                        <tr>
+                        <th>Order ID</th>
+                        <th>Cust_ID</th>
+                        <th>Pin Code</th>
+                        <th>Order Date</th>
+                        <th>Items</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {table.map(function(table, key){
+                        return(
+                        <tr key={key}>
+                            <td>{table.orderId}</td>
+                            <td>{table.customerId}</td>
+                            <td>{table.deliveryPincode}</td>
+                            <td>{table.orderDate}</td>
+                            <td>{table.items}</td>
+                        </tr>
+                        )
+                    })}
+                    </tbody>
+      
+                </table>
             </main>
         </div>
     )
