@@ -4,10 +4,9 @@ import TableRow from './TableRow';
 export class Table extends Component {
   render() {
     let rows = [];
-
-    //generate the table rows
-    //based on container representational pattern and Hook, CountryTable should not have business logic
+    
     this.props.data.forEach((dataObj) => {
+      let arr = dataObj.items.split(';');
       rows.push(
         <TableRow
           key={dataObj.key}
@@ -15,9 +14,10 @@ export class Table extends Component {
           customerId={dataObj.customerId}
           deliveryPincode={dataObj.deliveryPincode}
           orderDate={dataObj.orderDate}
-          items={dataObj.items} />);
+          items={dataObj.items}
+          itemsRow= {arr}/>);
+          
     });
-
     return (
       <table className='tableStyle'>
         <thead>

@@ -18,6 +18,7 @@ class Dashboard extends Component {
     componentDidMount(){
         // console.log("array");
         //reference taken by stackoverflow
+        //problem faced: convert the .csv file data in the form of array of objects.
         d3.csv(data).then((data) => {
             let array = [];
             // console.log(array);
@@ -45,7 +46,7 @@ class Dashboard extends Component {
     }
 
     render(){
-        console.log(this.data);
+        // console.log(this.data);
         const filteredData = this.data.filter((dataObj)=> (dataObj.deliveryPincode.indexOf(this.state.pincode) !== -1)&&
         (dataObj.orderDate.indexOf(this.state.orderDate) !== -1));
 
