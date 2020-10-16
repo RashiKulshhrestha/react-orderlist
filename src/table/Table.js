@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import TableRow from './TableRow';
+import "./table.css";
 
 export class Table extends Component {
   render() {
@@ -19,17 +20,17 @@ export class Table extends Component {
           
     });
     return (
-      <table className='tableStyle'>
+      <table className='table-container'>
         <thead>
           <tr>
-            <th>OrderId</th>
-            <th>CustomerId</th>
-            <th>Pincode</th>
-            <th>OrderDate</th>
+            <th>Order Id</th>
+            <th>Customer Id</th>
+            <th>Pin Code</th>
+            <th>Order Date</th>
             <th>Items</th>
           </tr>
         </thead>
-        <tbody className='tableBodyStyle'>
+        <tbody className='table-body'>
           {rows}
         </tbody>
       </table>

@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
+import "./search.css";
 
 export class Search extends Component {
 
   handleOnChange = (e) => {
-    //console.log('value: '+e.target.value+ ' name: '+ e.target.name);
     this.props.handleSearchEvents(e.target.value, e.target.name);
   };
 
   render() {
     return (
       <form className='Search-container'>
+        <label>Orders filtered by :</label>
         <input 
           type="text"
           name='pincode'

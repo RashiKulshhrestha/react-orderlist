@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import Table from "../table/Table";
 import Search from "../search/Search";
-import * as d3 from 'd3';
+import * as d3 from 'd3'; // package is used to read .csv file
 import data from "./data.csv";
+import "./dashboard.css";
 
 class Dashboard extends Component {
     constructor(props) {
@@ -51,8 +52,12 @@ class Dashboard extends Component {
         (dataObj.orderDate.indexOf(this.state.orderDate) !== -1));
 
         return(
-            <div>
-                <header>List of Orders</header>
+            <div className="dashboard-container">
+                <header>
+                    <div className="heading-h1">
+                        List of Orders
+                    </div>
+                </header>
                 <main>
                 <Search
                     pincode={this.state.pincode}
